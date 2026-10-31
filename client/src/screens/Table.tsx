@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { BookOpen, Check, Eye, LogOut, Menu, MessageCircle, Flag, Send, Smile, Volume2, VolumeX, WifiOff, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { EMOTES, TAUNTS, type Card, type GameView, type PlayerView, type RoomView } from '../../../shared/protocol';
-import { Ballot, CrownIcon, LadyIcon, QuestCard, QuestMedal, RoleWindow, ShieldIcon } from '../components/Art';
+import { Ballot, CrownIcon, LadyIcon, QuestCard, QuestMedal, RoleBlazon, ShieldIcon } from '../components/Art';
 import { RoleReveal, RoleSheet } from '../components/RoleCard';
 import { Avatar, Button, Logo, Modal } from '../components/Ui';
 import { sfx } from '../lib/sound';
@@ -100,7 +100,7 @@ function RevealCards({ cards, needed, seq }: { cards: Card[]; needed: number; se
           </motion.div>
         ))}
       </div>
-      <p className="reveal-count">{shown === 0 ? 'Les cartes sont mélangées…' : fails === 0 ? 'Aucun Échec pour l’instant' : plural(fails, 'carte Échec').replace('cartes Échec', 'cartes Échec')}</p>
+      <p className={cls('reveal-count', done && 'is-done')}>{shown === 0 ? 'Les cartes sont mélangées…' : fails === 0 ? 'Aucun Échec pour l’instant' : plural(fails, 'carte Échec').replace('cartes Échec', 'cartes Échec')}</p>
       <AnimatePresence>
         {done && (
           <motion.div className={cls('stamp', failed ? 'is-fail' : 'is-success')} initial={{ scale: 1.5, opacity: 0, rotate: -14 }} animate={{ scale: 1, opacity: 1, rotate: -6 }} transition={{ type: 'spring', stiffness: 320, damping: 16 }}>
@@ -190,7 +190,7 @@ function EmoteLayer({ seats }: { seats: Seat[] }) {
             <motion.span
               key={e.id}
               className={cls('emote', big ? 'is-emoji' : 'is-text')}
-              style={{ left: `${seat.x}%`, top: `${seat.y}%` }}
+              style={{ left: `clamp(70px, ${seat.x}%, calc(100% - 70px))`, top: `${seat.y}%` }}
               initial={{ y: 0, opacity: 0, scale: 0.5 }}
               animate={{ y: -46, opacity: 1, scale: 1 }}
               exit={{ y: -70, opacity: 0 }}
@@ -507,7 +507,6 @@ function Night({ view, g }: { view: RoomView; g: GameView }) {
   const count = g.done.length;
   return (
     <motion.div className="night" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="night-stars" aria-hidden />
       <div className="night-body">
         <p className="kicker">La nuit tombe sur Camelot</p>
         {me ? (
@@ -549,7 +548,7 @@ function LadyResult({ view, g }: { view: RoomView; g: GameView }) {
   return (
     <Modal open onClose={() => setOpen(null)} title="La Dame du Lac">
       <div className="lady-result">
-        <RoleWindow role={note.side === 'good' ? 'servant' : 'minion'} />
+        <RoleBlazon role={note.side === 'good' ? 'servant' : 'minion'} />
         <p>
           <b>{nameOf(view, note.target)}</b> {note.side === 'good' ? 'est loyal à Arthur.' : 'sert Mordred.'}
         </p>

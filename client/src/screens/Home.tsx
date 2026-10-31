@@ -1,9 +1,9 @@
-// Accueil : la rosace qui s'allume, pseudo + avatar, créer / rejoindre une table, jouer contre des bots, règles.
+// Accueil : Excalibur sur son île, pseudo + avatar, créer / rejoindre une table, jouer contre des bots, règles.
 import { motion } from 'framer-motion';
 import { BookOpen, Bot, House, MessageSquare, LogIn, Minus, Plus } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { AVATARS, MAX_PLAYERS, MIN_PLAYERS } from '../../../shared/protocol';
-import { Rosace, RoleWindow } from '../components/Art';
+import { HeroScene, RoleBlazon } from '../components/Art';
 import { AVATAR_EMOJI, AVATAR_LABELS, Backdrop, Button, Logo } from '../components/Ui';
 import { cls } from '../lib/util';
 import { codeFromUrl, createRoom, joinRoom } from '../net';
@@ -22,18 +22,18 @@ function savedBots(): number {
   }
 }
 
-/** La rosace s'allume au-dessus de deux fenêtres : un loyal et un traître, sans qu'on sache lequel est lequel. */
-function HeroRosace() {
+/** L'épée se plante sur l'île, entre deux écus retournés : un loyal et un traître, sans qu'on sache lequel est lequel. */
+function Hero() {
   return (
-    <div className="hero-rosace" aria-hidden>
-      <motion.div className="hero-rosace-wheel" initial={{ scale: 0.82, opacity: 0, rotate: -20 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 1.1, ease: [0.2, 0.8, 0.2, 1] }}>
-        <Rosace />
+    <div className="hero-scene" aria-hidden>
+      <motion.div className="hero-land" initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+        <HeroScene />
       </motion.div>
-      <motion.div className="hero-window is-left" initial={{ y: 30, opacity: 0, rotate: 0 }} animate={{ y: 0, opacity: 1, rotate: -8 }} transition={{ delay: 0.5, type: 'spring', stiffness: 150, damping: 16 }}>
-        <RoleWindow role={null} />
+      <motion.div className="hero-shield is-left" initial={{ y: 26, opacity: 0, rotate: 0 }} animate={{ y: 0, opacity: 1, rotate: -9 }} transition={{ delay: 0.75, type: 'spring', stiffness: 170, damping: 14 }}>
+        <RoleBlazon role={null} />
       </motion.div>
-      <motion.div className="hero-window is-right" initial={{ y: 30, opacity: 0, rotate: 0 }} animate={{ y: 0, opacity: 1, rotate: 8 }} transition={{ delay: 0.62, type: 'spring', stiffness: 150, damping: 16 }}>
-        <RoleWindow role={null} />
+      <motion.div className="hero-shield is-right" initial={{ y: 26, opacity: 0, rotate: 0 }} animate={{ y: 0, opacity: 1, rotate: 9 }} transition={{ delay: 0.87, type: 'spring', stiffness: 170, damping: 14 }}>
+        <RoleBlazon role={null} />
       </motion.div>
     </div>
   );
@@ -96,7 +96,7 @@ export function Home() {
         <p className="tagline">
           Loyaux d'Arthur et sbires de Mordred autour d'une même table. <b>Qui ment ?</b>
         </p>
-        <HeroRosace />
+        <Hero />
       </header>
 
       <motion.section className="panel home-panel" initial={{ y: 26, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.15, duration: 0.45 }}>

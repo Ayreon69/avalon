@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, LogOut, RotateCcw, Trophy } from 'lucide-react';
 import { useEffect } from 'react';
 import type { RoomView } from '../../../shared/protocol';
-import { QuestMedal, RoleWindow } from '../components/Art';
+import { QuestMedal, RoleBlazon } from '../components/Art';
 import { Avatar, Backdrop, Button, Logo, Pill } from '../components/Ui';
 import { SIDE_SHORT, roleName, victoryText, victoryTitle } from '../lib/text';
 import { cls, reducedMotion } from '../lib/util';
@@ -23,7 +23,7 @@ export function Final({ view }: { view: RoomView }) {
 
   useEffect(() => {
     if (!mine?.winner || reducedMotion()) return;
-    const colors = v.side === 'good' ? ['#f0b43c', '#2e6fe0', '#e8c46a', '#3f86f0', '#fff6d8'] : ['#c22a45', '#e0475c', '#4a1f6e', '#f0b43c', '#8e1530'];
+    const colors = v.side === 'good' ? ['#f0bd45', '#2c66bb', '#f8db7d', '#fbf5e6', '#f3a899'] : ['#c63f2d', '#a62c1e', '#47205c', '#f0bd45', '#fbf5e6'];
     const t = window.setTimeout(() => {
       confetti({ particleCount: 90, spread: 75, origin: { y: 0.25 }, colors, scalar: 0.9, disableForReducedMotion: true });
       confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0, y: 0.5 }, colors, disableForReducedMotion: true });
@@ -44,7 +44,7 @@ export function Final({ view }: { view: RoomView }) {
             animate={{ y: 0, opacity: 1, rotateY: 0 }}
             transition={{ delay: 0.5 + i * 0.09, duration: 0.45 }}
           >
-            <RoleWindow role={p.role} />
+            <RoleBlazon role={p.role} />
             <span className="final-name">
               <Avatar avatar={p.avatar} /> {p.id === view.me ? 'Toi' : p.name}
             </span>
@@ -62,7 +62,7 @@ export function Final({ view }: { view: RoomView }) {
   );
 
   return (
-    <Backdrop quiet className={cls('final-screen', `is-${v.side}`)}>
+    <Backdrop className={cls('final-screen', `is-${v.side}`)}>
       <div className="final">
         <header className="lobby-top">
           <Logo size="sm" />

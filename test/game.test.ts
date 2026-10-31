@@ -239,7 +239,7 @@ describe('table et vues', () => {
     const text = JSON.stringify(v);
     expect(v.game!.me!.role).toBe(g.role(host));
     // Aucun autre rôle n'apparaît dans la vue, hormis ce que mon rôle me montre.
-    for (const id of g.order) if (id !== host) expect(text).not.toContain(`"role":"${g.role(id)}","side"`);
+    for (const id of g.order) if (g.role(id) !== g.role(host)) expect(text).not.toContain(`"role":"${g.role(id)}","side"`);
     g.setTeam(g.leader, g.order.slice(0, 2));
     g.propose(g.leader);
     g.vote(g.order[1], false);

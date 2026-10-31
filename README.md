@@ -49,7 +49,7 @@ Entre bots qui raisonnent, le Bien gagne 55 % des parties à 5 joueurs, 52 % à 
 - Tables privées avec code à 4 lettres, lien d'invitation, partage natif et QR code
 - Partie contre 4 à 9 bots en un clic
 - Salon : aperçu des rôles en jeu selon le nombre de joueurs, rôles optionnels, débat oral ou écrit, chrono
-- La nuit : ta fenêtre de vitrail s'allume quand tu la touches, avec ce que ton rôle te montre des autres
+- La nuit : ton écu est retourné ; tu le touches pour découvrir ton blason et ce que ton rôle te montre des autres
 - Une table ronde : la couronne du meneur, les boucliers de l'équipe, la Dame du Lac ; le meneur compose l'équipe en touchant les sièges
 - Vote secret en un geste ; les bulletins se retournent tous ensemble sur les sièges, « Acceptée » ou « Rejetée » s'y tamponne
 - Les cartes de quête sont mélangées, retournées une à une au centre de la table, puis le verdict tombe

@@ -1,4 +1,4 @@
-// Briques d'interface communes : boutons, fenêtres, pastilles, sélecteurs, logo, avatars et décor de chapelle.
+// Briques d'interface communes : boutons, fenêtres, pastilles, sélecteurs, logo, avatars et décor de tapisserie.
 import { X } from 'lucide-react';
 import { useEffect, useRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
@@ -18,7 +18,7 @@ export function Button({ variant = 'default', icon, className, children, type = 
   );
 }
 
-/** Le titre, en onciale, couleur feuille d'or. */
+/** Le titre, dans une police née du tissage. */
 export function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   return (
     <div className={cls('logo', `logo-${size}`)} role="img" aria-label="Avalon">
@@ -27,11 +27,10 @@ export function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   );
 }
 
-/** Le décor : une nuit bleue, des pierres sombres et quelques éclats de vitrail qui respirent. */
-export function Backdrop({ children, className, quiet = false }: { children: ReactNode; className?: string; quiet?: boolean }) {
+/** Le décor : le fond de la tapisserie, semé de fleurs. */
+export function Backdrop({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cls('backdrop', quiet && 'is-quiet', className)}>
-      <div className="backdrop-glow" aria-hidden />
+    <div className={cls('backdrop', className)}>
       <div className="backdrop-body">{children}</div>
     </div>
   );

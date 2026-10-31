@@ -4,7 +4,7 @@ import { BookOpen, Bot, Check, Copy, Crown, LogOut, Play, QrCode, Share2, Trophy
 import { QRCodeSVG } from 'qrcode.react';
 import { useState } from 'react';
 import { EVIL_COUNT, MAX_PLAYERS, MIN_PLAYERS, TIMER_OPTIONS, evilSpecials, rolesProblem, type PlayerView, type Role, type RoomView, type Talk, type Timer } from '../../../shared/protocol';
-import { LadyIcon, RoleWindow } from '../components/Art';
+import { LadyIcon, RoleBlazon } from '../components/Art';
 import { Avatar, Backdrop, Button, Logo, Modal, Pill, RoleToggle, Segmented } from '../components/Ui';
 import { roleName } from '../lib/text';
 import { cls, shareUrl } from '../lib/util';
@@ -91,7 +91,7 @@ export function Lobby({ view }: { view: RoomView }) {
   };
 
   return (
-    <Backdrop quiet>
+    <Backdrop>
       <div className="lobby">
         <header className="lobby-top">
           <Logo size="sm" />
@@ -157,7 +157,7 @@ export function Lobby({ view }: { view: RoomView }) {
             <div className="deck" aria-label={`À ${shownCount} joueurs : ${roles.map(roleName).join(', ')}`}>
               {roles.map((r, i) => (
                 <motion.div key={`${r}${i}`} className="deck-card" initial={{ y: 8, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.03 }}>
-                  <RoleWindow role={r} />
+                  <RoleBlazon role={r} />
                   <span>{roleName(r).replace('Serviteur loyal d’Arthur', 'Loyal').replace('Sbire de Mordred', 'Sbire').replace('L’Assassin', 'Assassin')}</span>
                 </motion.div>
               ))}
@@ -171,12 +171,12 @@ export function Lobby({ view }: { view: RoomView }) {
                 on={s.perceval}
                 disabled={!isHost || (!s.perceval && specials + 1 > evilPlaces)}
                 onChange={(perceval) => set({ perceval })}
-                icon={<RoleWindow role="perceval" />}
+                icon={<RoleBlazon role="perceval" />}
                 title="Perceval et Morgane"
                 sub="Perceval voit Merlin… et Morgane, qui prend son visage."
               />
-              <RoleToggle on={s.mordred} disabled={!isHost || (!s.mordred && specials + 1 > evilPlaces)} onChange={(mordred) => set({ mordred })} icon={<RoleWindow role="mordred" />} title="Mordred" sub="Invisible aux yeux de Merlin." />
-              <RoleToggle on={s.oberon} disabled={!isHost || (!s.oberon && specials + 1 > evilPlaces)} onChange={(oberon) => set({ oberon })} icon={<RoleWindow role="oberon" />} title="Oberon" sub="Sert Mordred, mais seul : ses complices l'ignorent." />
+              <RoleToggle on={s.mordred} disabled={!isHost || (!s.mordred && specials + 1 > evilPlaces)} onChange={(mordred) => set({ mordred })} icon={<RoleBlazon role="mordred" />} title="Mordred" sub="Invisible aux yeux de Merlin." />
+              <RoleToggle on={s.oberon} disabled={!isHost || (!s.oberon && specials + 1 > evilPlaces)} onChange={(oberon) => set({ oberon })} icon={<RoleBlazon role="oberon" />} title="Oberon" sub="Sert Mordred, mais seul : ses complices l'ignorent." />
               <RoleToggle on={s.lady} disabled={!isHost} onChange={(lady) => set({ lady })} icon={<LadyIcon />} title="La Dame du Lac" sub="Sonder un joueur après les quêtes 2, 3 et 4. Conseillée dès 7." />
             </div>
             {problem && <p className="lobby-warn">{problem}</p>}
@@ -221,7 +221,7 @@ export function Lobby({ view }: { view: RoomView }) {
 
         <Modal open={qr} onClose={() => setQr(false)} title={`Table ${view.code}`}>
           <div className="qr-box">
-            <QRCodeSVG value={url} size={220} bgColor="#efe6cf" fgColor="#0b0d1a" level="M" includeMargin />
+            <QRCodeSVG value={url} size={220} bgColor="#fbf5e6" fgColor="#1c1510" level="M" includeMargin />
             <p className="muted small">Scanne pour rejoindre la table directement.</p>
             <code className="url-code">{url}</code>
           </div>

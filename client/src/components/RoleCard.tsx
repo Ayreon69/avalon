@@ -1,4 +1,4 @@
-// Ton rôle : la fenêtre qu'on touche pour l'allumer, ce qu'elle t'apprend des autres, et la fiche consultable en partie.
+// Ton rôle : l'écu qu'on touche pour le retourner, ce qu'il t'apprend des autres, et la fiche consultable en partie.
 import { AnimatePresence, motion } from 'framer-motion';
 import { EyeOff, Hand } from 'lucide-react';
 import { useState } from 'react';
@@ -7,10 +7,10 @@ import { sfx } from '../lib/sound';
 import { ROLE_TEXT, SIDE_NAMES, blindSpot, glimpseLabel, glimpseTitle, nameOf, roleName } from '../lib/text';
 import { cls, vibrate } from '../lib/util';
 import { useStore } from '../store';
-import { RoleWindow } from './Art';
+import { RoleBlazon } from './Art';
 import { Avatar, Modal } from './Ui';
 
-/** La fenêtre de ton rôle, éteinte tant que tu ne la touches pas : personne ne lit par-dessus ton épaule. */
+/** L'écu de ton rôle, retourné tant que tu ne le touches pas : personne ne lit par-dessus ton épaule. */
 export function RoleReveal({ view, me, startShown = false }: { view: RoomView; me: MyRole; startShown?: boolean }) {
   const [shown, setShown] = useState(startShown);
   const toggle = () => {
@@ -24,10 +24,10 @@ export function RoleReveal({ view, me, startShown = false }: { view: RoomView; m
   const blind = blindSpot(me.role, view);
   return (
     <div className={cls('role-reveal', shown && 'is-shown', `is-${me.side}`)}>
-      <button type="button" className="role-reveal-window" onClick={toggle} aria-label={shown ? 'Cacher mon rôle' : 'Révéler mon rôle'}>
+      <button type="button" className="role-reveal-shield" onClick={toggle} aria-label={shown ? 'Cacher mon rôle' : 'Révéler mon rôle'}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={shown ? 'on' : 'off'} initial={{ rotateY: 90, opacity: 0.4 }} animate={{ rotateY: 0, opacity: 1 }} exit={{ rotateY: -90, opacity: 0.4 }} transition={{ duration: 0.28 }}>
-            <RoleWindow role={shown ? me.role : null} />
+            <RoleBlazon role={shown ? me.role : null} />
           </motion.div>
         </AnimatePresence>
         <span className="role-reveal-hint">

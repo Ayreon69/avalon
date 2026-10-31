@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <!-- Le semis de la tapisserie : des fleurs et des brins posés sur le fond, tuile à répéter. -->
+  <defs>
+    <g id="brin" fill="none" stroke="#5f8f5e" stroke-width="1.6" stroke-linecap="round">
+      <path d="M0 14 Q1 6 0 -4" />
+      <path d="M0 9 Q-6 8 -8 2 Q-2 3 0 9 Z" fill="#4f7f54" stroke="none" />
+      <path d="M0 5 Q6 4 8 -2 Q2 -1 0 5 Z" fill="#6a9a62" stroke="none" />
+    </g>
+    <g id="cinq">
+      <circle cx="0" cy="-4.6" r="3.2" />
+      <circle cx="4.4" cy="-1.4" r="3.2" />
+      <circle cx="2.7" cy="3.7" r="3.2" />
+      <circle cx="-2.7" cy="3.7" r="3.2" />
+      <circle cx="-4.4" cy="-1.4" r="3.2" />
+      <circle cx="0" cy="0" r="2.2" fill="#f2c548" />
+    </g>
+    <g id="marguerite">
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(45)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(90)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(135)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(180)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(225)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(270)" />
+      <ellipse cx="0" cy="-5" rx="1.6" ry="3.2" transform="rotate(315)" />
+      <circle cx="0" cy="0" r="2.4" fill="#f2c548" />
+    </g>
+    <path id="tulipe" d="M-5 -7 L-2.4 -3.6 L0 -8 L2.4 -3.6 L5 -7 Q6 2 0 3 Q-6 2 -5 -7 Z" />
+    <g id="feuilles" stroke="none">
+      <path d="M0 0 Q-8 -2 -10 -9 Q-3 -8 0 0 Z" fill="#4f7f54" />
+      <path d="M0 0 Q8 -2 10 -9 Q3 -8 0 0 Z" fill="#6a9a62" />
+      <path d="M0 0 Q-2 -7 0 -13 Q2 -7 0 0 Z" fill="#5f8f5e" />
+    </g>
+  </defs>
+
+  <g transform="translate(36 42) rotate(-8)"><use href="#brin" /><use href="#cinq" y="-9" fill="#f6e8c8" /></g>
+  <g transform="translate(104 24) rotate(12) scale(0.9)"><use href="#feuilles" /></g>
+  <g transform="translate(164 56) rotate(6)"><use href="#brin" /><use href="#tulipe" y="-9" fill="#8fb0e2" /></g>
+  <g transform="translate(240 30) rotate(-14) scale(0.95)"><use href="#brin" /><use href="#marguerite" y="-9" fill="#f6e8c8" /></g>
+  <g transform="translate(292 74) rotate(10)"><use href="#feuilles" /></g>
+
+  <g transform="translate(78 92) rotate(16) scale(0.9)"><use href="#brin" /><use href="#tulipe" y="-9" fill="#f2c548" /></g>
+  <g transform="translate(22 124) rotate(-6) scale(0.85)"><use href="#feuilles" /></g>
+  <g transform="translate(214 106) rotate(-10)"><use href="#brin" /><use href="#cinq" y="-9" fill="#f3a899" /></g>
+  <g transform="translate(130 126) rotate(4) scale(0.8)"><use href="#marguerite" fill="#f6e8c8" /></g>
+  <g transform="translate(284 142) rotate(8) scale(0.95)"><use href="#brin" /><use href="#cinq" y="-9" fill="#8fb0e2" /></g>
+
+  <g transform="translate(52 182) rotate(9)"><use href="#brin" /><use href="#marguerite" y="-9" fill="#f3a899" /></g>
+  <g transform="translate(126 176) rotate(-12) scale(0.95)"><use href="#brin" /><use href="#cinq" y="-9" fill="#f2c548" /></g>
+  <g transform="translate(192 168) rotate(14) scale(0.85)"><use href="#feuilles" /></g>
+  <g transform="translate(246 200) rotate(-4)"><use href="#brin" /><use href="#tulipe" y="-9" fill="#f6e8c8" /></g>
+
+  <g transform="translate(20 240) rotate(-12) scale(0.9)"><use href="#brin" /><use href="#tulipe" y="-9" fill="#f3a899" /></g>
+  <g transform="translate(92 238) rotate(6) scale(0.85)"><use href="#feuilles" /></g>
+  <g transform="translate(156 252) rotate(10)"><use href="#brin" /><use href="#cinq" y="-9" fill="#f6e8c8" /></g>
+  <g transform="translate(298 254) rotate(-16) scale(0.85)"><use href="#marguerite" fill="#f2c548" /></g>
+  <g transform="translate(222 268) rotate(-8) scale(0.9)"><use href="#brin" /><use href="#marguerite" y="-9" fill="#8fb0e2" /></g>
+  <g transform="translate(64 296) rotate(8)"><use href="#brin" /><use href="#cinq" y="-9" fill="#8fb0e2" /></g>
+  <g transform="translate(130 300) rotate(-6) scale(0.8)"><use href="#feuilles" /></g>
+  <g transform="translate(272 306) rotate(4) scale(0.75)"><use href="#feuilles" /></g>
+</svg>

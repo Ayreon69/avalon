@@ -3,7 +3,7 @@ import { Crown, Droplets, Eye, Swords, Users, Vote } from 'lucide-react';
 import { QUEST_SIZES, type Role } from '../../../shared/protocol';
 import { ROLE_TEXT, roleName } from '../lib/text';
 import { useStore } from '../store';
-import { Ballot, QuestCard, RoleWindow } from './Art';
+import { Ballot, QuestCard, RoleBlazon } from './Art';
 import { Modal } from './Ui';
 
 const GOOD_ROLES: Role[] = ['merlin', 'perceval', 'servant'];
@@ -12,7 +12,7 @@ const EVIL_ROLES: Role[] = ['assassin', 'morgane', 'mordred', 'oberon', 'minion'
 function RoleLine({ role }: { role: Role }) {
   return (
     <li className="rule-role">
-      <RoleWindow role={role} className="rule-role-art" />
+      <RoleBlazon role={role} className="rule-role-art" />
       <div>
         <b>{roleName(role)}</b>
         <span>{ROLE_TEXT[role]}</span>
@@ -29,9 +29,9 @@ export function RulesModal() {
       <div className="rules">
         <section className="rule-hero">
           <div className="rule-fan" aria-hidden>
-            <RoleWindow role="merlin" />
-            <RoleWindow role={null} />
-            <RoleWindow role="assassin" />
+            <RoleBlazon role="merlin" />
+            <RoleBlazon role={null} />
+            <RoleBlazon role="assassin" />
           </div>
           <p>
             Deux camps s'affrontent en secret. Les <b className="t-good">loyaux d'Arthur</b> doivent réussir <b>trois quêtes</b>. Les <b className="t-evil">sbires de Mordred</b>, cachés parmi eux, doivent en faire échouer trois. Personne ne sait qui est qui… sauf le Mal, qui se connaît.

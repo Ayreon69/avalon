@@ -2,7 +2,7 @@
 
 **Loyaux d'Arthur et sbires de Mordred autour d'une même table. Qui ment ?**
 
-👉 **Jouer : adresse à venir** (la première ouverture peut prendre jusqu'à une minute, le temps que le serveur gratuit se réveille)
+👉 **[Jouer](https://avalon-f9o2.onrender.com)** (la première ouverture peut prendre jusqu'à une minute, le temps que le serveur gratuit se réveille)
 
 Jeu de rôles cachés multijoueur en ligne, à jouer entre amis depuis un navigateur, sur téléphone ou ordinateur, sans compte ni installation. On débat à voix haute, autour d'une table ou en appel ; l'appli distribue les rôles en secret, garde les votes et les cartes de quête.
 D'après *The Resistance : Avalon*, le jeu de Don Eskridge édité par Indie Boards & Cards (création de fans, non officielle, avec ses propres visuels).

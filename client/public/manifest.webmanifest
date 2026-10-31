@@ -1,0 +1,10 @@
+{
+  "name": "Avalon",
+  "short_name": "Avalon",
+  "description": "Loyaux d'Arthur contre sbires de Mordred : le jeu de rôles cachés entre amis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d1a",
+  "theme_color": "#0b0d1a",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
